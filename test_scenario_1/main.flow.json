@@ -1,8 +1,8 @@
 {
-  "activeGraphId":1,
+  "activeGraphId":12,
   "authors":"Anonymous",
-  "currentGraphID":1,
-  "date":1707571753,
+  "currentGraphID":12,
+  "date":1707580450,
   "debugEnabled":false,
   "description":"Project description.",
   "difficulty":40,
@@ -15,7 +15,7 @@
         [
           9,
           "flow",
-          11,
+          20,
           "flow",
           false
         ],
@@ -27,7 +27,7 @@
           false
         ]
       ],
-      "name":"New State",
+      "name":"Gameplay",
       "nodes":{
         "2":{
           "data":{},
@@ -44,8 +44,8 @@
             }
           },
           "pos":[
-            0,
-            0
+            -130,
+            -34
           ],
           "type":"events/onUpdate"
         },
@@ -74,25 +74,44 @@
             }
           },
           "pos":[
-            248,
+            150,
             -6
           ],
           "type":"debug/log"
         },
-        "11":{
+        "20":{
           "data":{},
           "dynamicMode":"repeat",
           "hiddenPins":{
             "p_in":{
-              "flow":false
+              "flow":false,
+              "timerId":false
             },
             "p_out":{}
           },
+          "pins":[
+            [
+              "in",
+              "flow",
+              "flow",
+              null,
+              "This is a flow pin.",
+              true
+            ],
+            [
+              "in",
+              "number",
+              "timerId",
+              null,
+              ""
+            ]
+          ],
           "pos":[
-            570,
+            472,
             -6
           ],
-          "type":"debug/stopManager"
+          "transitionName":"success",
+          "type":"states/transition"
         }
       },
       "showTab":true,
@@ -102,8 +121,8 @@
         "list":{}
       },
       "viewPos":[
-        -200,
-        -200
+        -167.66648864746093750000,
+        -128.33325195312500000000
       ],
       "viewZoom":1
     },
@@ -113,9 +132,23 @@
       "isStateGraph":true,
       "links":[
         [
+          13,
+          "success",
+          4,
+          "flow",
+          false
+        ],
+        [
           5,
           "flow",
+          13,
+          "flow",
+          false
+        ],
+        [
           4,
+          "success",
+          16,
           "flow",
           false
         ]
@@ -158,7 +191,7 @@
             ]
           ],
           "pos":[
-            374,
+            542,
             -6
           ],
           "targetGraphId":1,
@@ -174,8 +207,8 @@
             }
           },
           "pos":[
-            -4,
-            -6
+            -77,
+            -4
           ],
           "type":"states/stateEntry"
         },
@@ -198,11 +231,95 @@
             ]
           ],
           "pos":[
-            794,
-            -6
+            1227,
+            -4
           ],
           "transitionName":"",
           "type":"states/stateExit"
+        },
+        "13":{
+          "data":{},
+          "dynamicMode":"repeat",
+          "hiddenPins":{
+            "p_in":{
+              "flow":false
+            },
+            "p_out":{
+              "fail":false,
+              "success":false
+            }
+          },
+          "pins":[
+            [
+              "out",
+              "state",
+              "success",
+              null,
+              "This is a flow pin."
+            ],
+            [
+              "out",
+              "state",
+              "fail",
+              null,
+              "This is a flow pin."
+            ],
+            [
+              "in",
+              "state",
+              "flow",
+              null,
+              "This is a flow pin."
+            ]
+          ],
+          "pos":[
+            180,
+            -7
+          ],
+          "targetGraphId":12,
+          "type":"states/stateNode"
+        },
+        "16":{
+          "data":{},
+          "dynamicMode":"repeat",
+          "hiddenPins":{
+            "p_in":{
+              "flow":false
+            },
+            "p_out":{
+              "fail":false,
+              "success":false
+            }
+          },
+          "pins":[
+            [
+              "out",
+              "state",
+              "success",
+              null,
+              "This is a flow pin."
+            ],
+            [
+              "out",
+              "state",
+              "fail",
+              null,
+              "This is a flow pin."
+            ],
+            [
+              "in",
+              "state",
+              "flow",
+              null,
+              "This is a flow pin."
+            ]
+          ],
+          "pos":[
+            849,
+            -7
+          ],
+          "targetGraphId":15,
+          "type":"states/stateNode"
         }
       },
       "showTab":true,
@@ -213,6 +330,470 @@
       },
       "viewPos":[
         -200,
+        -200
+      ],
+      "viewZoom":1
+    },
+    "12":{
+      "description":"This is the description for graph New State",
+      "dirty":false,
+      "links":[
+        [
+          14,
+          "enterState",
+          30,
+          "flow",
+          false
+        ],
+        [
+          32,
+          "vehId",
+          30,
+          "vehId",
+          false
+        ],
+        [
+          128,
+          "flow",
+          11,
+          "flow",
+          false
+        ],
+        [
+          44,
+          "True",
+          128,
+          "flow",
+          false
+        ],
+        [
+          44,
+          "False",
+          19,
+          "flow",
+          false
+        ],
+        [
+          11,
+          "down",
+          19,
+          "flow",
+          false
+        ],
+        [
+          40,
+          "timerId",
+          19,
+          "timerId",
+          false
+        ],
+        [
+          40,
+          "flow",
+          44,
+          "flow",
+          false
+        ],
+        [
+          8,
+          "value",
+          44,
+          "condition",
+          false
+        ],
+        [
+          14,
+          "flow",
+          40,
+          "flow",
+          false
+        ]
+      ],
+      "name":"Reset",
+      "nodes":{
+        "8":{
+          "data":{
+            "value":false
+          },
+          "dynamicMode":"repeat",
+          "hiddenPins":{
+            "p_in":{},
+            "p_out":{
+              "value":false
+            }
+          },
+          "pos":[
+            325,
+            218
+          ],
+          "type":"types/bool"
+        },
+        "11":{
+          "data":{},
+          "dynamicMode":"repeat",
+          "hiddenPins":{
+            "p_in":{
+              "flow":false,
+              "text":false
+            },
+            "p_out":{
+              "down":false,
+              "flow":false,
+              "hold":true,
+              "up":true
+            }
+          },
+          "pos":[
+            1032,
+            -48
+          ],
+          "type":"ui/imgui/elemental/imButton"
+        },
+        "14":{
+          "data":{},
+          "dynamicMode":"repeat",
+          "hiddenPins":{
+            "p_in":{},
+            "p_out":{
+              "dtRaw":true,
+              "dtReal":true,
+              "dtSim":true,
+              "enterState":false,
+              "exitState":false,
+              "flow":false
+            }
+          },
+          "pos":[
+            3,
+            -6
+          ],
+          "type":"events/onUpdate"
+        },
+        "19":{
+          "data":{},
+          "dynamicMode":"repeat",
+          "hiddenPins":{
+            "p_in":{
+              "flow":false,
+              "timerId":false
+            },
+            "p_out":{}
+          },
+          "pins":[
+            [
+              "in",
+              "flow",
+              "flow",
+              null,
+              "This is a flow pin.",
+              true
+            ],
+            [
+              "in",
+              "number",
+              "timerId",
+              null,
+              ""
+            ]
+          ],
+          "pos":[
+            1340,
+            22
+          ],
+          "transitionName":"success",
+          "type":"states/transition"
+        },
+        "30":{
+          "data":{},
+          "dynamicMode":"repeat",
+          "hiddenPins":{
+            "p_in":{
+              "flow":false,
+              "vehId":false
+            },
+            "p_out":{
+              "flow":false
+            }
+          },
+          "pos":[
+            276,
+            -90
+          ],
+          "type":"vehicle/beamstate/reset"
+        },
+        "32":{
+          "data":{},
+          "dynamicMode":"repeat",
+          "hiddenPins":{
+            "p_in":{},
+            "p_out":{
+              "vehId":false
+            }
+          },
+          "pos":[
+            -32,
+            -90
+          ],
+          "type":"scene/getPlayerVehicle"
+        },
+        "40":{
+          "data":{},
+          "dynamicMode":"once",
+          "hardcodedPins":{
+            "ref":{
+              "type":"string",
+              "value":"dtSim"
+            }
+          },
+          "hiddenPins":{
+            "p_in":{
+              "duration":false,
+              "flow":false,
+              "ref":true,
+              "reset":false
+            },
+            "p_out":{
+              "flow":false,
+              "timerId":false
+            }
+          },
+          "pos":[
+            262,
+            22
+          ],
+          "type":"gameplay/timers/createTimer"
+        },
+        "44":{
+          "data":{},
+          "dynamicMode":"repeat",
+          "hiddenPins":{
+            "p_in":{
+              "condition":false,
+              "flow":false
+            },
+            "p_out":{
+              "False":false,
+              "True":false,
+              "flow":true
+            }
+          },
+          "pos":[
+            536,
+            50
+          ],
+          "type":"logic/branch"
+        },
+        "128":{
+          "data":{},
+          "dynamicMode":"repeat",
+          "hardcodedPins":{
+            "anchor":{
+              "type":"string",
+              "value":"TL"
+            },
+            "height":{
+              "type":"number",
+              "value":150
+            },
+            "posX":{
+              "type":"number",
+              "value":100
+            },
+            "posY":{
+              "type":"number",
+              "value":100
+            },
+            "title":{
+              "type":"string",
+              "value":"TESTAS"
+            },
+            "width":{
+              "type":"number",
+              "value":200
+            }
+          },
+          "hiddenPins":{
+            "p_in":{
+              "anchor":true,
+              "flow":false,
+              "height":true,
+              "posX":true,
+              "posY":true,
+              "title":false,
+              "width":true
+            },
+            "p_out":{
+              "flow":false,
+              "wasClosed":false
+            }
+          },
+          "pos":[
+            774,
+            -34
+          ],
+          "type":"ui/imgui/elemental/imBegin"
+        }
+      },
+      "showTab":true,
+      "type":"graph",
+      "variables":{
+        "customVariableOrder":{},
+        "list":{}
+      },
+      "viewPos":[
+        -160.36499023437500000000,
+        -393.51245117187500000000
+      ],
+      "viewZoom":0.50000000000000000000
+    },
+    "15":{
+      "description":"This is the description for graph New State",
+      "dirty":false,
+      "links":[
+        [
+          46,
+          "flow",
+          48,
+          "flow",
+          false
+        ],
+        [
+          46,
+          "timerId",
+          48,
+          "value",
+          false
+        ],
+        [
+          17,
+          "enterState",
+          46,
+          "flow",
+          false
+        ],
+        [
+          17,
+          "flow",
+          24,
+          "flow",
+          false
+        ]
+      ],
+      "name":"End",
+      "nodes":{
+        "17":{
+          "data":{},
+          "dynamicMode":"repeat",
+          "hiddenPins":{
+            "p_in":{},
+            "p_out":{
+              "dtRaw":true,
+              "dtReal":true,
+              "dtSim":true,
+              "enterState":false,
+              "exitState":false,
+              "flow":false
+            }
+          },
+          "pos":[
+            -158,
+            8
+          ],
+          "type":"events/onUpdate"
+        },
+        "24":{
+          "data":{},
+          "dynamicMode":"repeat",
+          "hiddenPins":{
+            "p_in":{
+              "flow":false
+            },
+            "p_out":{}
+          },
+          "pos":[
+            640,
+            22
+          ],
+          "type":"debug/stopManager"
+        },
+        "46":{
+          "data":{},
+          "dynamicMode":"repeat",
+          "hiddenPins":{
+            "p_in":{
+              "flow":false
+            },
+            "p_out":{
+              "flow":false,
+              "timerId":false
+            }
+          },
+          "pins":[
+            [
+              "out",
+              "flow",
+              "flow",
+              null,
+              "This is a flow pin.",
+              true
+            ],
+            [
+              "in",
+              "flow",
+              "flow",
+              null,
+              "This is a flow pin.",
+              true
+            ],
+            [
+              "out",
+              "number",
+              "timerId",
+              null,
+              ""
+            ]
+          ],
+          "pos":[
+            66,
+            -62
+          ],
+          "type":"states/transitionStack"
+        },
+        "48":{
+          "data":{},
+          "dynamicMode":"repeat",
+          "hardcodedPins":{
+            "logType":{
+              "type":"string",
+              "value":"I"
+            }
+          },
+          "hiddenPins":{
+            "p_in":{
+              "flow":false,
+              "logTag":true,
+              "logType":true,
+              "value":false
+            },
+            "p_out":{
+              "flow":false
+            }
+          },
+          "pos":[
+            332,
+            -104
+          ],
+          "type":"debug/log"
+        }
+      },
+      "showTab":true,
+      "type":"graph",
+      "variables":{
+        "customVariableOrder":{},
+        "list":{}
+      },
+      "viewPos":[
+        -201,
         -200
       ],
       "viewZoom":1
